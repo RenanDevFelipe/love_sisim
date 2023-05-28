@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Me aceita de Volta</title>
+    <link rel="icon" type="image/png" href="./coracao.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Love SiSimi</h1>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Mande Mensagem</a></li>
+                    <li><a href="">Assunto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="section">
+        <h1 style="color: #ffffff; font-size: 50px; transform: translate(15%, 50%); width: 80%;" data-aos="fade-down">Abaixo leia com atenção será <br> apresentada algumas <br> cartas</h1>
+        <h3 style="color: #ffffff; transform: translate(15%, 800%); width: 80%;" data-aos="fade-left">↓↓↓ confira as cartas abaixo ↓↓↓</h3>
+    </section>
+
+    <main>
+        <div class="carrossel-container">
+            <div class="carrossel">
+                <div class="bloco" data-aos="zoom-in-up">
+                    <h1>Carta Número 1</h1> <br><br>
+
+                    <p>
+                        Oi, não sabia mais o que fazer então resolvi fazer esse programa básico kkk <br>
+                        Acho que as vezes eu encjo demais o seu saco mas queria que você soubesse que te amo pra porra <br>
+                        você sempre será a minha menina que irei cuidar sempre eu queria dizer que estou esperando por você <br>
+                        e nunca cansarei de esperar.
+                    </p>
+                </div>
+
+                <div class="bloco" data-aos="zoom-in-up">
+                    <h1>Carta Número 2</h1> <br><br>
+
+                    <p>
+                       Bem-vinda a carta número 2, nessa carta queria relembrar o dia que nos conhecemos <br>
+                       na verdade nos conhecemos pessoalmente, foi em uma aula de marcelo onde o mesmo estava <br>
+                       dando aula de numeros binários e foi nesse momento que sorriu para mim a primeira vez... <br>
+                       foi nesse momento que entendi o verdadeiro significado do alinhamento de júpter e plutão.
+                    </p>
+                </div>
+
+                <div class="bloco" data-aos="zoom-in-up">
+                    <h1>Carta Número 3</h1> <br><br>
+
+                    <p>
+                        Bem-vinda a terceira e última carta da vez, nessa carta vou contar de tudo então se prepare. <br>
+                        Sábado, 27 de maio de 2023 <br>
+                        Para a pessoa mais importante para mim. <br>
+                        Vou te contar o dia que descobri que me apaixonei por você, foi em uma aula de marcelo <br>
+                        estávamos no fundo da sala enquanto ele dava aula, em um rápido momento me encontrei em crise <br>
+                        você como sempre a única que notou e dessa vez você segurou forte a minha mão <br>
+                        nesse momento não se percebeu mas olhei você por alguns segundos e foi ali que descobri <br>
+                        que tinha me apaixonado por você.
+                    </p>
+                </div>
+            </div>
+            <button class="material-symbols-outlined anterior" onclick="moverCarrossel(1)">navigate_before</button>
+            <button class="material-symbols-outlined proximo" onclick="moverCarrossel(-1)">navigate_next</button>
+        </div>
+    </main>
+
+    <section style="    width: 100%;
+    height: 80vh;
+    background: rgba(3, 0, 12, 0.7) url(./foto-paralax.jpeg);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color: #ffffff;">
+        <h1 style="font-size: 50px; transform:translate(20%, 50%); width: 80%;" data-aos="zoom-in-up">Agora Fique com <br> a última parte da nossa supresa em <br> um formulário</h1>
+        <h2 style="font-size: 25px; transform:translate(20%, 160%); width: 80%" data-aos="zoom-in-up">Confira uma por uma e <br> logo apoís prossiga em frente</h2>
+    </section>
+
+    <section style="height: 80vh;">
+        <h1 style="text-align: center; padding: 20px;" data-aos="zoom-in-up">Formulário para o WhatsApp</h1>
+
+        <form style="margin-left: 20%; margin-top: 5%;" data-aos="zoom-in-up">
+            <div class="box">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" style="width: 800px; height: 50px;">
+            </div>
+
+            <div class="box">
+                <label for="telefone">Aceita Namorar Comigo???</label>
+                <input type="text" id="telefone" name="telefone" style="height: 100px; width: 800px; ">
+            </div>
+
+            <button type="button" onclick="enviarMensagem()" style="margin-top: 20px; padding: 10px; background: green;  color:#ffffff;">Enviar mensagem</button>
+        </form>
+    </section>
+    
+</body>
+
+<footer>
+    <div>&COPY;RENAN FELIPE 2023 TODOS DIRETOS RESERVADOS</div>
+</footer>
+<script src="./script.js"></script>
+
+<script>
+    function enviarMensagem() {
+  var nome = document.getElementById("nome").value;
+  var telefone = document.getElementById("telefone").value;
+  var mensagem = "Oiii, sou eu " + nome + ". e minha resposta é: " + telefone + ".";
+  
+  // Substitua "seu_numero" pelo seu número de telefone com o código do país e remova os caracteres especiais
+  var url = "https://api.whatsapp.com/send?phone=seu_numero&text=" + encodeURIComponent(mensagem);
+  
+  // Abre o link do WhatsApp em uma nova janela ou guia
+  window.open(url);
+}
+</script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script>
+    AOS.init(
+        {duration: 3000},
+    );
+  </script>
+</html>
